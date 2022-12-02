@@ -1,3 +1,5 @@
-abstract class Problem {
-  void solution();
+abstract class Problem<T> {
+  const Problem();
+
+  Future<T> solution();
 }
