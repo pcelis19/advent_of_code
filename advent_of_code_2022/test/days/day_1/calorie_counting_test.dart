@@ -33,12 +33,12 @@ Future<void> _confirm(_InputAndAnswer inputAndAnswer) async {
   expect(result, inputAndAnswer.answer);
 }
 
-class MockCalorieCountingRepo extends ICalorieCountingRepo {
+class MockCalorieCountingRepo extends IDay1Repo {
   final List<String> _output;
   const MockCalorieCountingRepo(this._output);
 
   @override
-  Future<List<String>> getInput(Day1Parts day1part) async => _output;
+  Future<List<String>> getInput(DayParts day1part) async => _output;
 }
 
 typedef _InputAndAnswer = Tuple2<int, List<String>>;

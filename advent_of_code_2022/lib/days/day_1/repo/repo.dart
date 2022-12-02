@@ -1,2 +1,2 @@
-export 'calorie_counting_repo.dart';
-export 'io_calorie_counting_repo.dart';
+export 'day_1_repo.dart';
+export 'io_day_1_repo.dart';
