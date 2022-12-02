@@ -2,13 +2,6 @@ import 'package:advent_of_code_2022/days/day_1/day_1.dart';
 import 'package:test/test.dart';
 import 'package:tuple/tuple.dart';
 
-typedef _InputAndAnswer = Tuple2<int, List<String>>;
-
-extension on _InputAndAnswer {
-  int get answer => item1;
-  List<String> get input => item2;
-}
-
 void main() => _defineTest();
 
 void _defineTest() {
@@ -46,6 +39,13 @@ class MockCalorieCountingRepo extends ICalorieCountingRepo {
 
   @override
   Future<List<String>> getInput() async => _output;
+}
+
+typedef _InputAndAnswer = Tuple2<int, List<String>>;
+
+extension on _InputAndAnswer {
+  int get answer => item1;
+  List<String> get input => item2;
 }
 
 const _is15139 = _InputAndAnswer(15139, [
@@ -88,4 +88,4 @@ const _is12722Multi = _InputAndAnswer(12722, [
   '2',
 ]);
 
-const _is0Empty = _InputAndAnswer(0, <String>[]);
+const _is0Empty = _InputAndAnswer(0, []);

@@ -1,4 +1,3 @@
-import 'package:advent_of_code_2022/days/day_1/repo/io_calorie_counting_repo.dart';
 import 'package:advent_of_code_2022/lib.dart';
 
 class CalorieCounting extends Problem<int> {

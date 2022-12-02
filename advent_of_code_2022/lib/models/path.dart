@@ -27,12 +27,11 @@ class FilePath with _$FilePath {
       );
 
   File getFile() {
-    final _subDir = subDir;
     late final String path;
-    if (_subDir == null) {
+    if (subDir == null) {
       path = p.join(directory.path, fileName);
     } else {
-      path = p.join(directory.path, _subDir, fileName);
+      path = p.join(directory.path, subDir, fileName);
     }
     return File(path);
   }

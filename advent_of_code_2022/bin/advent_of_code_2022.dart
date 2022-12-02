@@ -1,11 +1,12 @@
 import 'package:advent_of_code_2022/lib.dart';
 
-const _problems = [CalorieCounting()];
+const _problems = <Problem<Object?>>[CalorieCounting()];
 
 void main(List<String> arguments) async {
-  await problemRunner(_problems[0]);
+  await _problemRunner(_problems[0]);
 }
 
-Future<void> problemRunner(Problem problem) async {
-  await problem.solution();
+Future<void> _problemRunner(Problem<Object?> problem) async {
+  final solution = await problem.solution();
+  print(solution);
 }
