@@ -1,5 +1,11 @@
-import 'package:advent_of_code_2022/advent_of_code_2022.dart' as advent_of_code_2022;
+import 'package:advent_of_code_2022/lib.dart';
 
-void main(List<String> arguments) {
-  print('Hello world: ${advent_of_code_2022.calculate()}!');
+const _problems = [CalorieCounting()];
+
+void main(List<String> arguments) async {
+  await problemRunner(_problems[0]);
+}
+
+Future<void> problemRunner(Problem problem) async {
+  await problem.solution();
 }
