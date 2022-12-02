@@ -11,13 +11,13 @@ class FilePath with _$FilePath {
   const FilePath._();
 
   const factory FilePath.currentDir({
-    String? subPath,
+    String? subDir,
     required String fileName,
   }) = _FilePathCurrentDirectory;
 
   const factory FilePath.customDir({
     required Directory directory,
-    String? subPath,
+    String? subDir,
     required String fileName,
   }) = _FilePathCustomDirectory;
 
@@ -27,8 +27,13 @@ class FilePath with _$FilePath {
       );
 
   File getFile() {
+    final _subDir = subDir;
     late final String path;
-    path = p.join(directory.path, subPath, fileName);
+    if (_subDir == null) {
+      path = p.join(directory.path, fileName);
+    } else {
+      path = p.join(directory.path, _subDir, fileName);
+    }
     return File(path);
   }
 
