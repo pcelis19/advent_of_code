@@ -1,15 +1,15 @@
 import 'package:advent_of_code_2022/lib.dart';
 
-class CalorieCounting extends Problem<int> {
+class Day1Part1 extends Problem<int> {
   final ICalorieCountingRepo _repo;
 
-  const CalorieCounting({
-    ICalorieCountingRepo? repo,
-  }) : _repo = repo ?? const IOCalorieCountingRepo();
+  const Day1Part1({
+    required ICalorieCountingRepo repo,
+  }) : _repo = repo;
 
   @override
   Future<int> solution() async {
-    final input = await _repo.getInput();
+    final input = await _repo.getInput(Day1Parts.part1);
     final solution = _highestCalorieCount(input);
     return solution;
   }

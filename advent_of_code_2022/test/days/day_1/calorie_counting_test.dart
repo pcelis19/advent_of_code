@@ -5,7 +5,7 @@ import 'package:tuple/tuple.dart';
 void main() => _defineTest();
 
 void _defineTest() {
-  group('Testing that our solution works', () {
+  group('Testing part 1', () {
     test('When empty', () {
       _confirm(_is0Empty);
     });
@@ -28,7 +28,7 @@ void _defineTest() {
 
 Future<void> _confirm(_InputAndAnswer inputAndAnswer) async {
   final repo = MockCalorieCountingRepo(inputAndAnswer.input);
-  final problem = CalorieCounting(repo: repo);
+  final problem = Day1Part1(repo: repo);
   final result = await problem.solution();
   expect(result, inputAndAnswer.answer);
 }
@@ -38,7 +38,7 @@ class MockCalorieCountingRepo extends ICalorieCountingRepo {
   const MockCalorieCountingRepo(this._output);
 
   @override
-  Future<List<String>> getInput() async => _output;
+  Future<List<String>> getInput(Day1Parts day1part) async => _output;
 }
 
 typedef _InputAndAnswer = Tuple2<int, List<String>>;
