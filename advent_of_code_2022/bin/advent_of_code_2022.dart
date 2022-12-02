@@ -1,6 +1,4 @@
-import 'package:advent_of_code_2022/days/day_1/day_1_problems.dart';
 import 'package:advent_of_code_2022/lib.dart';
-import 'package:advent_of_code_2022/models/day.dart';
 
 final _days = <DayProblems>[
   Day1Problems(),
@@ -12,9 +10,10 @@ void main(List<String> arguments) async {
 
 Future<void> _problemRunner(DayProblems day) async {
   var index = 1;
+  print('Day ${day.day}');
   for (final problem in day.problems) {
-    print('Day ${day.day}');
     final solution = await problem.solution();
-    print('part ${index.toString().padLeft(3, '0')}:\n\t$solution');
+    print('  Part ${index.toString().padLeft(3, '0')}: $solution');
+    index++;
   }
 }

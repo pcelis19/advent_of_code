@@ -8,6 +8,7 @@ class Day1Problems extends DayProblems {
           day: 1,
           problems: [
             Day1Part1(repo: repo),
+            Day1Part2(repo: repo),
           ],
         );
 }
