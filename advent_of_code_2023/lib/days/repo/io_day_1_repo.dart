@@ -7,4 +7,10 @@ class IODay1Repo extends Day1Repo {
     final file = FilesService.getInputFile(day: 1, dayPart: DayPart.a);
     return file.readAsLines();
   }
+
+  @override
+  Future<List<String>> part2() {
+    final file = FilesService.getInputFile(day: 1, dayPart: DayPart.b);
+    return file.readAsLines();
+  }
 }

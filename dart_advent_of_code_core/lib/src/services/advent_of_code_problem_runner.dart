@@ -15,10 +15,9 @@ mixin AdventOfCodeProblemRunner on _Disqualifier {
     var index = 1;
     print('Day ${day.day}');
     for (final problem in day.problems) {
+      print('  Solving, part ${index.toString().padLeft(3, '0')}');
       final solution = await problem.solution();
-      print(
-        '  Part ${index.toString().padLeft(3, '0')}\'s solution is: $solution',
-      );
+      print('  The solution is: $solution');
       index++;
     }
   }
