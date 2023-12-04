@@ -6,9 +6,16 @@ version: 1.0.0
 environment:
   sdk: '>=2.19.6 <3.0.0'
 
-# dependencies:
+dependencies:
 #   path: ^1.8.0
+  dart_advent_of_code_core: 1.0.0
+  meta: ^1.11.0
 
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.21.0
+
+dependency_overrides:
+  dart_advent_of_code_core:
+    path: ../dart_advent_of_code_core/
+

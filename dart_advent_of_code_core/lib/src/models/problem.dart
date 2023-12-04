@@ -1,5 +1,5 @@
-abstract class Problem<T extends Object?> {
+abstract class Problem {
   const Problem();
 
-  Future<T> solution();
+  Future<String> solution();
 }
