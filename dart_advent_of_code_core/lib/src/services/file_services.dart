@@ -10,10 +10,11 @@ enum DayPart {
 }
 
 mixin FilesService {
-  static File getInputFile(
-      {required int day,
-      required DayPart dayPart,
-      String fileExtension = '.txt'}) {
+  static File getInputFile({
+    required int day,
+    required DayPart dayPart,
+    String fileExtension = '.txt',
+  }) {
     if (day < 0 || day > 25) {
       throw 'Invalid day: $day';
     }
