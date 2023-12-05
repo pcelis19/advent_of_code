@@ -28,7 +28,8 @@ class Day3PartAInputRow {
             token += letter;
             break;
           case _CharCharacterization.symbol:
-          nodes.put(scannerIndex, value)
+            nodes.put(scannerIndex, Day3PartAInputNodeSymbol());
+            shouldContinue = false;
           case _CharCharacterization.peroid:
           // TODO: Handle this case.
         }
