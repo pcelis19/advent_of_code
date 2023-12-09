@@ -52,7 +52,8 @@ class Day3PartAInputRow {
             );
             numberToken = '';
           }
-          xLocAndNode.put(charIndex, Day3PartAInputNodeSymbol());
+          xLocAndNode.put(charIndex, Day3PartAInputNodeSymbol(char));
+          break;
         case _CharCharacterization.period:
           if (numberToken.isNotEmpty) {
             xLocAndNode.put(
@@ -89,10 +90,17 @@ class Day3PartAInputNodeNumber extends Day3PartAInputNode {
   int get absoluteValue {
     return int.parse(value);
   }
+
+  @override
+  String toString() => value;
 }
 
 class Day3PartAInputNodeSymbol extends Day3PartAInputNode {
-  const Day3PartAInputNodeSymbol();
+  final String value;
+  const Day3PartAInputNodeSymbol(this.value);
+
+  @override
+  String toString() => value;
 }
 
 enum _CharCharacterization {
