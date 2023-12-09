@@ -1,77 +1,110 @@
 import 'package:dart_advent_of_code_core/dart_advent_of_code_core.dart';
 
 abstract class Day3Repo {
-  Future<Day3PartAInputModel> getPartA();
-}
-
-class Day3PartAInputModel {
-  final List<List<Day3PartAInputRow>> rows;
+  Future<List<Day3PartAInputRow>> getPartA();
 }
 
 class Day3PartAInputRow {
   final Map<int, Day3PartAInputNode> xLocAndNode;
 
+  late final Map<int, Day3PartAInputNodeNumber> xLocAndNumbers =
+      xLocAndNode.reduce(
+    (entry) {
+      final value = entry.value;
+      switch (value) {
+        case Day3PartAInputNodeNumber():
+          return MapEntry(entry.key, value);
+        default:
+          return null;
+      }
+    },
+  );
+
+  late final Map<int, Day3PartAInputNodeSymbol> xLocAndSymbols =
+      xLocAndNode.reduce(
+    (entry) {
+      final value = entry.value;
+      switch (value) {
+        case Day3PartAInputNodeSymbol():
+          return MapEntry(entry.key, value);
+        default:
+          return null;
+      }
+    },
+  );
+
   Day3PartAInputRow({required this.xLocAndNode});
 
-  factory Day3PartAInputRow.parseWord(String word) {
-    final nodes = <int, Day3PartAInputNode>{};
-    int currentIndex = 0;
-    while (currentIndex < word.length) {
-      bool shouldContinue = true;
-      int scannerIndex = currentIndex;
-      String token = '';
-      while (shouldContinue && scannerIndex < word.length) {
-        final letter = word[scannerIndex];
-        final characterization = letter.getCharCharacterization();
-        switch (characterization) {
-          case _CharCharacterization.number:
-            token += letter;
-            break;
-          case _CharCharacterization.symbol:
-            nodes.put(scannerIndex, Day3PartAInputNodeSymbol());
-            shouldContinue = false;
-          case _CharCharacterization.peroid:
-          // TODO: Handle this case.
-        }
+  factory Day3PartAInputRow.parseWord(String line) {
+    final xLocAndNode = <int, Day3PartAInputNode>{};
+    String numberToken = '';
+    line.forEachLetter((char, charIndex) {
+      final characterization = char.getCharCharacterization();
+      switch (characterization) {
+        case _CharCharacterization.number:
+          numberToken += char;
+          break;
+        case _CharCharacterization.symbol:
+          if (numberToken.isNotEmpty) {
+            xLocAndNode.put(
+              charIndex - numberToken.length,
+              Day3PartAInputNodeNumber(value: numberToken),
+            );
+            numberToken = '';
+          }
+          xLocAndNode.put(charIndex, Day3PartAInputNodeSymbol());
+        case _CharCharacterization.period:
+          if (numberToken.isNotEmpty) {
+            xLocAndNode.put(
+              charIndex - numberToken.length,
+              Day3PartAInputNodeNumber(value: numberToken),
+            );
+            numberToken = '';
+          }
+          break;
       }
+    });
+    if (numberToken.isNotEmpty) {
+      xLocAndNode.put(
+        line.length - 1,
+        Day3PartAInputNodeNumber(value: numberToken),
+      );
     }
 
-    return Day3PartAInputRow(xLocAndNode: nodes);
+    return Day3PartAInputRow(xLocAndNode: xLocAndNode);
   }
 
   Day3PartAInputNode? getNode(int xCoordinate) => xLocAndNode.get(xCoordinate);
 }
 
-sealed class Day3PartAInputNode {}
+sealed class Day3PartAInputNode {
+  const Day3PartAInputNode();
+}
 
 class Day3PartAInputNodeNumber extends Day3PartAInputNode {
-  final List<int> values;
+  final String value;
 
-  Day3PartAInputNodeNumber({required this.values});
-
-  void addValue(int value) => values.add(value);
+  const Day3PartAInputNodeNumber({required this.value});
 
   int get absoluteValue {
-    final buffer = StringBuffer();
-    for (final value in values) {
-      buffer.write(value);
-    }
-    return int.parse(buffer.toString());
+    return int.parse(value);
   }
 }
 
-class Day3PartAInputNodeSymbol extends Day3PartAInputNode {}
+class Day3PartAInputNodeSymbol extends Day3PartAInputNode {
+  const Day3PartAInputNodeSymbol();
+}
 
 enum _CharCharacterization {
   number,
   symbol,
-  peroid,
+  period,
 }
 
 extension on String {
   _CharCharacterization getCharCharacterization() {
     if (this == '.') {
-      return _CharCharacterization.peroid;
+      return _CharCharacterization.period;
     } else if (isNumber()) {
       return _CharCharacterization.number;
     } else {

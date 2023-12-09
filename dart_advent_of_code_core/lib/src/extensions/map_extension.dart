@@ -17,4 +17,18 @@ extension DartAdventOfCodeCoreMapX<T extends Object?, S> on Map<T, S> {
       present.call(value);
     }
   }
+
+  /// reduces the map where
+  Map<TKey, SValue> reduce<TKey, SValue>(
+      MapEntry<TKey, SValue>? Function(MapEntry<T, S> entry) transformation) {
+    final newEntries = <MapEntry<TKey, SValue>>[];
+
+    for (final entry in entries) {
+      final entryResult = transformation.call(entry);
+      if (entryResult != null) {
+        newEntries.add(entryResult);
+      }
+    }
+    return {}..addEntries(newEntries);
+  }
 }
