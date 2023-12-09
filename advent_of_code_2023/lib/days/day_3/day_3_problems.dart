@@ -36,6 +36,7 @@ class Day3PartA extends Problem {
         );
         if (shouldAdd) {
           tally += entry.value.absoluteValue;
+          print('Adding [${entry.value}](${entry.key}, $y})');
         }
       }
     }
@@ -53,19 +54,27 @@ class Day3PartA extends Problem {
     final willCheckLeft = xLoc != 0;
     const willCheckRight = true;
     final xStart = xLoc - 1;
-    final xFinish = xLoc + 1;
+    final xFinish = xLoc + numberNode.value.length;
     if (willCheckTop) {
       final lineToCheck = lines[yLoc - 1];
-      final hasSymbol =
-          _doesLineHaveSymbolInRange(lineToCheck, xStart, xFinish);
+      final hasSymbol = _doesLineHaveSymbolInRange(
+        lineToCheck,
+        yLoc: yLoc - 1,
+        xStart: xStart,
+        xFinish: xFinish,
+      );
       if (hasSymbol) {
         return true;
       }
     }
     if (willCheckBottom) {
       final lineToCheck = lines[yLoc + 1];
-      final hasSymbol =
-          _doesLineHaveSymbolInRange(lineToCheck, xStart, xFinish);
+      final hasSymbol = _doesLineHaveSymbolInRange(
+        lineToCheck,
+        yLoc: yLoc + 1,
+        xStart: xStart,
+        xFinish: xFinish,
+      );
       if (hasSymbol) {
         return true;
       }
@@ -86,10 +95,15 @@ class Day3PartA extends Problem {
   }
 
   bool _doesLineHaveSymbolInRange(
-      Day3PartAInputRow row, int xStart, int xFinish) {
+    Day3PartAInputRow row, {
+    required int yLoc,
+    required int xStart,
+    required int xFinish,
+  }) {
     for (int i = xStart; i < xFinish; i++) {
       final hasValue = row.xLocAndSymbols.get(i) != null;
       if (hasValue) {
+        // print('IS A SYMBOL: ($i, $yLoc)');
         return true;
       }
     }
