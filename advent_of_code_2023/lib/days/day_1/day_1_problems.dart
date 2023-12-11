@@ -25,9 +25,8 @@ class Day1PartA extends Problem {
 
   @override
   Future<String> solution() async {
-    final lines = await day1repo.getPartB();
+    final lines = await day1repo.getPartA();
     int sum = 0;
-
     for (final line in lines) {
       String? firstNum, secondNum;
       // here we go through every letter
