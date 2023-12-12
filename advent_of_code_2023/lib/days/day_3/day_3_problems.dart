@@ -36,7 +36,6 @@ class Day3PartA extends Problem {
         );
         if (shouldAdd) {
           tally += entry.value.absoluteValue;
-          print('Adding [${entry.value}](${entry.key}, $y})');
         }
       }
     }
@@ -49,17 +48,18 @@ class Day3PartA extends Problem {
     required int xLoc,
     required Day3PartAInputNodeNumber numberNode,
   }) {
-    final willCheckTop = yLoc != 0;
-    final willCheckBottom = yLoc != lines.length - 1;
-    final willCheckLeft = xLoc != 0;
+    final willCheckTop = yLoc > 0;
+    final willCheckBottom = yLoc < lines.length - 1;
+    final willCheckLeft = xLoc > 0;
     const willCheckRight = true;
     final xStart = xLoc - 1;
-    final xFinish = xLoc + numberNode.value.length;
+    final xFinish = xLoc + numberNode.value.length + 1;
     if (willCheckTop) {
-      final lineToCheck = lines[yLoc - 1];
+      final yLineIndex = yLoc - 1;
+      final lineToCheck = lines[yLineIndex];
       final hasSymbol = _doesLineHaveSymbolInRange(
         lineToCheck,
-        yLoc: yLoc - 1,
+        yLoc: yLineIndex,
         xStart: xStart,
         xFinish: xFinish,
       );
@@ -68,10 +68,11 @@ class Day3PartA extends Problem {
       }
     }
     if (willCheckBottom) {
-      final lineToCheck = lines[yLoc + 1];
+      final yLineIndex = yLoc + 1;
+      final lineToCheck = lines[yLineIndex];
       final hasSymbol = _doesLineHaveSymbolInRange(
         lineToCheck,
-        yLoc: yLoc + 1,
+        yLoc: yLineIndex,
         xStart: xStart,
         xFinish: xFinish,
       );
@@ -100,10 +101,9 @@ class Day3PartA extends Problem {
     required int xStart,
     required int xFinish,
   }) {
-    for (int i = xStart; i < xFinish; i++) {
+    for (int i = xStart; i <= xFinish; i++) {
       final hasValue = row.xLocAndSymbols.get(i) != null;
       if (hasValue) {
-        // print('IS A SYMBOL: ($i, $yLoc)');
         return true;
       }
     }
