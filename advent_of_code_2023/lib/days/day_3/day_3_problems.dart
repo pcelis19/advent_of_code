@@ -35,6 +35,9 @@ class Day3PartA extends Problem {
           numberNode: entry.value,
         );
         if (shouldAdd) {
+          final xLocString = entry.key.toString().padLeft(3, '0');
+          final yLocString = y.toString().padLeft(3, '0');
+          print('($xLocString, $yLocString)');
           tally += entry.value.absoluteValue;
         }
       }
@@ -53,7 +56,7 @@ class Day3PartA extends Problem {
     final willCheckLeft = xLoc > 0;
     const willCheckRight = true;
     final xStart = xLoc - 1;
-    final xFinish = xLoc + numberNode.value.length + 1;
+    final xFinish = xLoc + numberNode.value.length;
     if (willCheckTop) {
       final yLineIndex = yLoc - 1;
       final lineToCheck = lines[yLineIndex];
@@ -87,7 +90,8 @@ class Day3PartA extends Problem {
       }
     }
     if (willCheckRight) {
-      final hasSymbol = lines[yLoc].xLocAndSymbols.get(xFinish) != null;
+      final lineChecking = lines[yLoc];
+      final hasSymbol = lineChecking.xLocAndSymbols.get(xFinish) != null;
       if (hasSymbol) {
         return true;
       }
