@@ -24,7 +24,7 @@ class Day3PartA extends Problem {
   @override
   Future<String> solution() async {
     final lines = await day3repo.getPartA();
-    var tally = 0;
+    var sum = 0;
     for (int y = 0; y < lines.length; y++) {
       final line = lines[y];
       for (final entry in line.xLocAndNumbers.entries) {
@@ -32,37 +32,33 @@ class Day3PartA extends Problem {
           lines: lines,
           yLoc: y,
           xLoc: entry.key,
-          numberNode: entry.value,
+          currentNumberNode: entry.value,
         );
         if (shouldAdd) {
-          final xLocString = entry.key.toString().padLeft(3, '0');
-          final yLocString = y.toString().padLeft(3, '0');
-          print('($xLocString, $yLocString)');
-          tally += entry.value.absoluteValue;
+          sum += entry.value.absoluteValue;
         }
       }
     }
-    return tally.toString();
+    return sum.toString();
   }
 
   bool _shouldAdd({
     required List<Day3PartAInputRow> lines,
     required int yLoc,
     required int xLoc,
-    required Day3PartAInputNodeNumber numberNode,
+    required Day3PartAInputNodeNumber currentNumberNode,
   }) {
     final willCheckTop = yLoc > 0;
     final willCheckBottom = yLoc < lines.length - 1;
     final willCheckLeft = xLoc > 0;
     const willCheckRight = true;
     final xStart = xLoc - 1;
-    final xFinish = xLoc + numberNode.value.length;
+    final xFinish = xLoc + currentNumberNode.value.length;
     if (willCheckTop) {
       final yLineIndex = yLoc - 1;
       final lineToCheck = lines[yLineIndex];
       final hasSymbol = _doesLineHaveSymbolInRange(
         lineToCheck,
-        yLoc: yLineIndex,
         xStart: xStart,
         xFinish: xFinish,
       );
@@ -75,7 +71,6 @@ class Day3PartA extends Problem {
       final lineToCheck = lines[yLineIndex];
       final hasSymbol = _doesLineHaveSymbolInRange(
         lineToCheck,
-        yLoc: yLineIndex,
         xStart: xStart,
         xFinish: xFinish,
       );
@@ -101,7 +96,6 @@ class Day3PartA extends Problem {
 
   bool _doesLineHaveSymbolInRange(
     Day3PartAInputRow row, {
-    required int yLoc,
     required int xStart,
     required int xFinish,
   }) {
