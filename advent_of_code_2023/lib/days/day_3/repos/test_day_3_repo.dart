@@ -1,5 +1,4 @@
 import 'package:advent_of_code_2023/advent_of_code_2023.dart';
-import 'package:dart_advent_of_code_core/dart_advent_of_code_core.dart';
 
 class TestDay3Repo extends Day3Repo {
   @override
