@@ -24,6 +24,7 @@ class Day3PartAInputRow {
             numberToken = '';
           }
           xLocAndNode.put(charIndex, Day3PartAInputNodeSymbol(char));
+
           break;
         case _CharCharacterization.period:
           if (numberToken.isNotEmpty) {
@@ -37,8 +38,9 @@ class Day3PartAInputRow {
       }
     });
     if (numberToken.isNotEmpty) {
+      final xLoc = line.length - numberToken.length;
       xLocAndNode.put(
-        line.length - 1,
+        xLoc,
         Day3PartAInputNodeNumber(value: numberToken),
       );
     }
