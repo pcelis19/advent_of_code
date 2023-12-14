@@ -31,4 +31,19 @@ mixin FilesService {
     );
     return File(path);
   }
+
+  static File getSpecificFile({
+    required String fileName,
+    String fileExtension = '.txt',
+  }) {
+    final _fileName = fileName + fileExtension;
+    // example of what it will read: assets/input_files/day_1_a
+    final path = p.join(
+      Directory.current.path,
+      'assets',
+      'input_files',
+      _fileName,
+    );
+    return File(path);
+  }
 }
