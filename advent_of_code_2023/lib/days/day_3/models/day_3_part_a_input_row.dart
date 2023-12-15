@@ -16,18 +16,18 @@ class Day3PartAInputRow {
           break;
         case _CharCharacterization.symbol:
           if (numberToken.isNotEmpty) {
-            xLocAndNode.put(
+            xLocAndNode.putOrThrow(
               charIndex - numberToken.length,
               Day3PartAInputNodeNumber(value: numberToken),
             );
             numberToken = '';
           }
-          xLocAndNode.put(charIndex, Day3PartAInputNodeSymbol(char));
+          xLocAndNode.putOrThrow(charIndex, Day3PartAInputNodeSymbol(char));
 
           break;
         case _CharCharacterization.period:
           if (numberToken.isNotEmpty) {
-            xLocAndNode.put(
+            xLocAndNode.putOrThrow(
               charIndex - numberToken.length,
               Day3PartAInputNodeNumber(value: numberToken),
             );
@@ -38,7 +38,7 @@ class Day3PartAInputRow {
     });
     if (numberToken.isNotEmpty) {
       final xLoc = line.length - numberToken.length;
-      xLocAndNode.put(
+      xLocAndNode.putOrThrow(
         xLoc,
         Day3PartAInputNodeNumber(value: numberToken),
       );
