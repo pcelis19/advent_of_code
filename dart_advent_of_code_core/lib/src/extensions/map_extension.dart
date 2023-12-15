@@ -3,6 +3,13 @@ extension DartAdventOfCodeCoreMapX<T extends Object?, S> on Map<T, S> {
     this[key] = value;
   }
 
+  /// If `key` this function will throw
+  void putOrThrow(T key, S value) => update(
+        key,
+        (value) => throw '$key already exists in the map',
+        ifAbsent: () => value,
+      );
+
   S? get(T key) => this[key];
 
   void whenKeyIs({

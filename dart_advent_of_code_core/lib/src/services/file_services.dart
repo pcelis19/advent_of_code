@@ -18,18 +18,9 @@ mixin FilesService {
     if (day < 0 || day > 25) {
       throw 'Invalid day: $day';
     }
-
-    final fileName =
-        // ignore: prefer_interpolation_to_compose_strings
-        'day_' + day.toString() + '_${dayPart.label}$fileExtension';
+    final fileName = 'day_${day}_${dayPart.label}$fileExtension';
     // example of what it will read: assets/input_files/day_1_a
-    final path = p.join(
-      Directory.current.path,
-      'assets',
-      'input_files',
-      fileName,
-    );
-    return File(path);
+    return getSpecificFile(fileName: fileName);
   }
 
   static File getSpecificFile({
@@ -37,7 +28,6 @@ mixin FilesService {
     String fileExtension = '.txt',
   }) {
     final _fileName = fileName + fileExtension;
-    // example of what it will read: assets/input_files/day_1_a
     final path = p.join(
       Directory.current.path,
       'assets',
