@@ -18,9 +18,12 @@ mixin FilesService {
     if (day < 0 || day > 25) {
       throw 'Invalid day: $day';
     }
-    final fileName = 'day_${day}_${dayPart.label}$fileExtension';
+    final fileName = 'day_${day}_${dayPart.label}';
     // example of what it will read: assets/input_files/day_1_a
-    return getSpecificFile(fileName: fileName);
+    return getSpecificFile(
+      fileName: fileName,
+      fileExtension: fileExtension,
+    );
   }
 
   static File getSpecificFile({

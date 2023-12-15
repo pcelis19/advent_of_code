@@ -8,8 +8,15 @@ class Day3Problems extends DayProblems {
       : super(
           day: 3,
           problems: [
-            Day3PartA(day3repo),
-            // Day3PartB(day2repo),
+            Day3PartA(day3repo: day3repo),
+            Day3PartB(day3repo: day3repo)
           ],
         );
+}
+
+abstract class Day3Problem extends Problem {
+  @protected
+  final Day3Repo day3repo;
+
+  const Day3Problem({required this.day3repo});
 }

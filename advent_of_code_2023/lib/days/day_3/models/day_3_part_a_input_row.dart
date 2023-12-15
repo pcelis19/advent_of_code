@@ -74,6 +74,9 @@ class Day3PartAInputRow {
   );
 
   Day3PartAInputNode? getNode(int xCoordinate) => xLocAndNode.get(xCoordinate);
+
+  @override
+  String toString() => xLocAndNode.toString();
 }
 
 enum _CharCharacterization {

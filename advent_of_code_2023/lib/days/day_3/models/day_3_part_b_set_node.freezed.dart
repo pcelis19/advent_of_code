@@ -16,8 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Day3PartBSetNode {
-  (Point<num>, Point<num>) get forward => throw _privateConstructorUsedError;
-  (Point<num>, Point<num>) get backwards => throw _privateConstructorUsedError;
+  (Point<int>, Point<int>) get gearNumberLocations =>
+      throw _privateConstructorUsedError;
+  (Point<int>, Point<int>) get gearNumberLocationsReveresed =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $Day3PartBSetNodeCopyWith<Day3PartBSetNode> get copyWith =>
@@ -31,7 +33,8 @@ abstract class $Day3PartBSetNodeCopyWith<$Res> {
       _$Day3PartBSetNodeCopyWithImpl<$Res, Day3PartBSetNode>;
   @useResult
   $Res call(
-      {(Point<num>, Point<num>) forward, (Point<num>, Point<num>) backwards});
+      {(Point<int>, Point<int>) gearNumberLocations,
+      (Point<int>, Point<int>) gearNumberLocationsReveresed});
 }
 
 /// @nodoc
@@ -47,18 +50,18 @@ class _$Day3PartBSetNodeCopyWithImpl<$Res, $Val extends Day3PartBSetNode>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? forward = null,
-    Object? backwards = null,
+    Object? gearNumberLocations = null,
+    Object? gearNumberLocationsReveresed = null,
   }) {
     return _then(_value.copyWith(
-      forward: null == forward
-          ? _value.forward
-          : forward // ignore: cast_nullable_to_non_nullable
-              as (Point<num>, Point<num>),
-      backwards: null == backwards
-          ? _value.backwards
-          : backwards // ignore: cast_nullable_to_non_nullable
-              as (Point<num>, Point<num>),
+      gearNumberLocations: null == gearNumberLocations
+          ? _value.gearNumberLocations
+          : gearNumberLocations // ignore: cast_nullable_to_non_nullable
+              as (Point<int>, Point<int>),
+      gearNumberLocationsReveresed: null == gearNumberLocationsReveresed
+          ? _value.gearNumberLocationsReveresed
+          : gearNumberLocationsReveresed // ignore: cast_nullable_to_non_nullable
+              as (Point<int>, Point<int>),
     ) as $Val);
   }
 }
@@ -72,7 +75,8 @@ abstract class _$$Day3PartBSetNodeImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {(Point<num>, Point<num>) forward, (Point<num>, Point<num>) backwards});
+      {(Point<int>, Point<int>) gearNumberLocations,
+      (Point<int>, Point<int>) gearNumberLocationsReveresed});
 }
 
 /// @nodoc
@@ -86,36 +90,38 @@ class __$$Day3PartBSetNodeImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? forward = null,
-    Object? backwards = null,
+    Object? gearNumberLocations = null,
+    Object? gearNumberLocationsReveresed = null,
   }) {
     return _then(_$Day3PartBSetNodeImpl(
-      forward: null == forward
-          ? _value.forward
-          : forward // ignore: cast_nullable_to_non_nullable
-              as (Point<num>, Point<num>),
-      backwards: null == backwards
-          ? _value.backwards
-          : backwards // ignore: cast_nullable_to_non_nullable
-              as (Point<num>, Point<num>),
+      gearNumberLocations: null == gearNumberLocations
+          ? _value.gearNumberLocations
+          : gearNumberLocations // ignore: cast_nullable_to_non_nullable
+              as (Point<int>, Point<int>),
+      gearNumberLocationsReveresed: null == gearNumberLocationsReveresed
+          ? _value.gearNumberLocationsReveresed
+          : gearNumberLocationsReveresed // ignore: cast_nullable_to_non_nullable
+              as (Point<int>, Point<int>),
     ));
   }
 }
 
 /// @nodoc
 
-class _$Day3PartBSetNodeImpl implements _Day3PartBSetNode {
+class _$Day3PartBSetNodeImpl extends _Day3PartBSetNode {
   const _$Day3PartBSetNodeImpl(
-      {required this.forward, required this.backwards});
+      {required this.gearNumberLocations,
+      required this.gearNumberLocationsReveresed})
+      : super._();
 
   @override
-  final (Point<num>, Point<num>) forward;
+  final (Point<int>, Point<int>) gearNumberLocations;
   @override
-  final (Point<num>, Point<num>) backwards;
+  final (Point<int>, Point<int>) gearNumberLocationsReveresed;
 
   @override
   String toString() {
-    return 'Day3PartBSetNode(forward: $forward, backwards: $backwards)';
+    return 'Day3PartBSetNode(gearNumberLocations: $gearNumberLocations, gearNumberLocationsReveresed: $gearNumberLocationsReveresed)';
   }
 
   @override
@@ -123,13 +129,17 @@ class _$Day3PartBSetNodeImpl implements _Day3PartBSetNode {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$Day3PartBSetNodeImpl &&
-            (identical(other.forward, forward) || other.forward == forward) &&
-            (identical(other.backwards, backwards) ||
-                other.backwards == backwards));
+            (identical(other.gearNumberLocations, gearNumberLocations) ||
+                other.gearNumberLocations == gearNumberLocations) &&
+            (identical(other.gearNumberLocationsReveresed,
+                    gearNumberLocationsReveresed) ||
+                other.gearNumberLocationsReveresed ==
+                    gearNumberLocationsReveresed));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, forward, backwards);
+  int get hashCode => Object.hash(
+      runtimeType, gearNumberLocations, gearNumberLocationsReveresed);
 
   @JsonKey(ignore: true)
   @override
@@ -139,16 +149,19 @@ class _$Day3PartBSetNodeImpl implements _Day3PartBSetNode {
           this, _$identity);
 }
 
-abstract class _Day3PartBSetNode implements Day3PartBSetNode {
+abstract class _Day3PartBSetNode extends Day3PartBSetNode {
   const factory _Day3PartBSetNode(
-          {required final (Point<num>, Point<num>) forward,
-          required final (Point<num>, Point<num>) backwards}) =
-      _$Day3PartBSetNodeImpl;
+      {required final (Point<int>, Point<int>) gearNumberLocations,
+      required final (
+        Point<int>,
+        Point<int>
+      ) gearNumberLocationsReveresed}) = _$Day3PartBSetNodeImpl;
+  const _Day3PartBSetNode._() : super._();
 
   @override
-  (Point<num>, Point<num>) get forward;
+  (Point<int>, Point<int>) get gearNumberLocations;
   @override
-  (Point<num>, Point<num>) get backwards;
+  (Point<int>, Point<int>) get gearNumberLocationsReveresed;
   @override
   @JsonKey(ignore: true)
   _$$Day3PartBSetNodeImplCopyWith<_$Day3PartBSetNodeImpl> get copyWith =>
