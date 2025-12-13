@@ -1,5 +1,4 @@
-import 'package:advent_of_code_2023/days/day_2/repos/day_2_repo.dart';
-import 'package:dart_advent_of_code_core/dart_advent_of_code_core.dart';
+import 'package:advent_of_code_2023/advent_of_code_2023.dart';
 import 'package:meta/meta.dart';
 
 class Day2Problems extends DayProblems {
