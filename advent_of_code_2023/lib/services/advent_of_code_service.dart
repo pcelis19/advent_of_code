@@ -1,12 +1,8 @@
-import 'dart:async';
-
-import 'package:dart_advent_of_code_core/dart_advent_of_code_core.dart';
-
 /// made so that no external can mixin `AdventOfCodeProblemRunner`
 abstract class _Disqualifier {}
 
 // ignore: library_private_types_in_public_api
-mixin AdventOfCodeProblemRunner on _Disqualifier {
+mixin AdventOfCodeService on _Disqualifier {
   static Future<void> runProblems(Iterable<DayProblems> days) async {
     for (final day in days) {
       await _problemRunner(day);

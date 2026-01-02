@@ -1,6 +1,4 @@
-import 'package:advent_of_code_2022/lib.dart';
 import 'package:test/test.dart';
-import 'package:tuple/tuple.dart';
 
 void main() => _defineTest();
 
