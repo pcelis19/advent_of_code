@@ -1,6 +1,8 @@
-enum AOCYear { aoc2022, aoc2023, aoc2025 }
+import 'package:advent_of_code/advent_of_code.dart';
 
 class AdventOfCodeYear {
   final AOCYear year;
-  final List<AdventOfCodeDay> days;
+  final Iterable<AdventOfCodeDay> days;
+
+  AdventOfCodeYear({required this.year, required this.days});
 }
