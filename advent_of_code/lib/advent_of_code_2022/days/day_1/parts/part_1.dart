@@ -1,17 +1,13 @@
-import 'package:advent_of_code_2022/lib.dart';
+import 'package:advent_of_code/advent_of_code.dart';
 
-class Day1Part1 extends Problem<int> {
-  final IDay1Repo _repo;
-
-  const Day1Part1({
-    required IDay1Repo repo,
-  }) : _repo = repo;
+class AOC2022D1P1Problem extends AdventOfCodeProblem {
+  AOC2022D1P1Problem({required super.getInputFcn});
 
   @override
-  Future<int> solution() async {
-    final input = await _repo.getInput(DayParts.part1);
+  Future<String> solution() async {
+    final input = await getInput();
     final solution = _highestCalorieCount(input);
-    return solution;
+    return solution.toString();
   }
 
   int _highestCalorieCount(List<String> input) {

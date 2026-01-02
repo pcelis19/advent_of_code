@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:advent_of_code/advent_of_code.dart';
 import 'package:advent_of_code_2022/lib.dart';
 
 class IOCalorieCountingRepo extends IDay1Repo {

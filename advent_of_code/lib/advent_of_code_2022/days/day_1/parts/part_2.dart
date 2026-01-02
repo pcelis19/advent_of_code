@@ -1,18 +1,14 @@
-import 'package:advent_of_code_2022/lib.dart';
+import 'package:advent_of_code/advent_of_code.dart';
 
-class Day1Part2 extends Problem<int> {
-  final IDay1Repo _repo;
-
-  const Day1Part2({
-    required IDay1Repo repo,
-  }) : _repo = repo;
+class Day1Part2 extends AdventOfCodeProblem {
+  Day1Part2({required super.getInputFcn});
 
   @override
-  Future<int> solution() async {
-    final input = await _repo.getInput(DayParts.part2);
+  Future<String> solution() async {
+    final input = await getInput();
     final tallies = _sortedElfsTallies(input);
     final solution = _topNElfsTallies(tallies, 3);
-    return solution;
+    return solution.toString();
   }
 
   int _topNElfsTallies(List<int> tallies, int topX) {
