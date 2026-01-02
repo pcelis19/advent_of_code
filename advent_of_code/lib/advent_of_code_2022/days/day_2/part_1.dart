@@ -1,4 +1,4 @@
-import 'package:advent_of_code_2022/lib.dart';
+import 'package:advent_of_code/advent_of_code.dart';
 
 int _rockBonus = 1;
 int _paperBonus = 2;
@@ -7,18 +7,14 @@ int _draw = 3;
 int _loss = 0;
 int _win = 6;
 
-class Day2Part1 extends Problem<int> {
-  final IDay2Repo _repo;
-
-  const Day2Part1({
-    IDay2Repo? repo,
-  }) : _repo = repo ?? const IODay2Repo();
+class AOC2022D2P1Problem extends AdventOfCodeProblem {
+  AOC2022D2P1Problem({required super.getInputFcn});
 
   @override
-  Future<int> solution() async {
-    final input = await _repo.getInput(DayParts.part1);
+  Future<String> solution() async {
+    final input = await getInput();
     final solution = _resultsOfAllMatches(input);
-    return solution;
+    return solution.toString();
   }
 
   int _resultsOfAllMatches(List<String> matches) {

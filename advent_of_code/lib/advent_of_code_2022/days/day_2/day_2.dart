@@ -1,3 +1,2 @@
-export 'parts/parts.dart';
-export 'problems.dart';
-export 'repo/repo.dart';
+export 'part_1.dart';
+export 'part_2.dart';

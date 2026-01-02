@@ -1,2 +1,2 @@
-export 'day_1_problems.dart';
-export 'repos/repos.dart';
+export 'part_1.dart';
+export 'part_2.dart';

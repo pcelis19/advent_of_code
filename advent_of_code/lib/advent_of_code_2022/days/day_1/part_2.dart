@@ -1,7 +1,7 @@
 import 'package:advent_of_code/advent_of_code.dart';
 
-class Day1Part2 extends AdventOfCodeProblem {
-  Day1Part2({required super.getInputFcn});
+class AOC2022D1P2Problem extends AdventOfCodeProblem {
+  AOC2022D1P2Problem({required super.getInputFcn});
 
   @override
   Future<String> solution() async {

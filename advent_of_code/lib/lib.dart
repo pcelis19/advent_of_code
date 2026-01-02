@@ -1,8 +1,10 @@
+export 'advent_of_code.dart';
 export 'advent_of_code_2022/advent_of_code_2022.dart';
 export 'advent_of_code_2023/advent_of_code_2023.dart';
 export 'advent_of_code_2025/advent_of_code_2025.dart';
 export 'data_structures/data_structures.dart';
 export 'extensions/extensions.dart';
+export 'gen/gen.dart';
 export 'models/models.dart';
 export 'other/other.dart';
 export 'services/services.dart';
