@@ -1,25 +1,24 @@
 import 'dart:math';
 
-import 'package:advent_of_code_2023/advent_of_code_2023.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:advent_of_code/advent_of_code.dart';
 
-part 'day_3_part_b_set_node.freezed.dart';
+part 'aoc_2023_d3p1_set_node.freezed.dart';
 
 @freezed
-class Day3PartBSetNode with _$Day3PartBSetNode {
-  const Day3PartBSetNode._();
-
-  const factory Day3PartBSetNode({
+abstract class AOC2023D3P1SetNode with _$AOC2023D3P1SetNode {
+  AOC2023D3P1SetNode._();
+  factory AOC2023D3P1SetNode({
     required (IntPoint, IntPoint) gearNumberLocations,
     required (IntPoint, IntPoint) gearNumberLocationsReveresed,
-  }) = _Day3PartBSetNode;
+  }) = _AOC2023D3P1SetNode;
 
-  static Day3PartBSetNode fromNodeLocations({
+  static AOC2023D3P1SetNode fromNodeLocations({
     required IntPoint node1Loc,
     required IntPoint node2Loc,
   }) {
     (IntPoint, IntPoint) forward = (node1Loc, node2Loc);
-    return Day3PartBSetNode(
+    return AOC2023D3P1SetNode(
       gearNumberLocations: forward,
       gearNumberLocationsReveresed: forward.reverse(),
     );

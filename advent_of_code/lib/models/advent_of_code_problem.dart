@@ -1,13 +1,13 @@
-typedef AdventOfCodeInputFunction = Future<List<String>> Function();
+typedef AdventOfCodeInputFunction<T extends Object> = Future<T> Function();
 
-abstract class AdventOfCodeProblem {
-  final AdventOfCodeInputFunction _getInputFcn;
+abstract class AdventOfCodeProblem<T extends Object> {
+  final AdventOfCodeInputFunction<T> _getInputFcn;
 
-  const AdventOfCodeProblem({required AdventOfCodeInputFunction getInputFcn})
+  const AdventOfCodeProblem({required AdventOfCodeInputFunction<T> getInputFcn})
     : _getInputFcn = getInputFcn;
 
   /// The input for this problem
-  Future<List<String>> getInput() => _getInputFcn.call();
+  Future<T> getInput() => _getInputFcn.call();
 
   /// The solution to this problem
   Future<String> solution();

@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:advent_of_code/advent_of_code.dart';
 
+typedef ListString = List<String>;
+
 final _years = <AdventOfCodeYear>[
   AdventOfCodeYear(
     year: AOCYear.aoc2022,
@@ -31,7 +33,7 @@ final _years = <AdventOfCodeYear>[
     year: AOCYear.aoc2023,
     days: [
       AdventOfCodeDay(
-        day: AOCDay.aoc1,
+        day: AOCDay.day1,
         problems: [
           AOC2023D1P1Problem(
             getInputFcn: Assets.aoc2023InputFiles.day1a.getInputFcn(),
@@ -42,7 +44,7 @@ final _years = <AdventOfCodeYear>[
         ],
       ),
       AdventOfCodeDay(
-        day: AOCDay.aoc2,
+        day: AOCDay.day2,
         problems: [
           AOC2023D2P1Problem(
             getInputFcn: Assets.aoc2023InputFiles.day2a.getInputFcn(),
@@ -53,7 +55,7 @@ final _years = <AdventOfCodeYear>[
         ],
       ),
       AdventOfCodeDay(
-        day: AOCDay.aoc3,
+        day: AOCDay.day3,
         problems: [
           AOC2023D3P1Problem(
             getInputFcn: Assets.aoc2023InputFiles.day3a.getInputFcn(),

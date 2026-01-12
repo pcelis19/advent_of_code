@@ -1,6 +1,6 @@
 import 'package:advent_of_code/advent_of_code.dart';
 
-class AOC2023D1P2Problem extends AdventOfCodeProblem {
+class AOC2023D1P2Problem extends AdventOfCodeProblem<Strings> {
   AOC2023D1P2Problem({required super.getInputFcn});
 
   @override

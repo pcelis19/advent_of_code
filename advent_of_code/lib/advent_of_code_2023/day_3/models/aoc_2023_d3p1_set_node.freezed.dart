@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'day_3_part_b_set_node.dart';
+part of 'aoc_2023_d3p1_set_node.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,20 +12,20 @@ part of 'day_3_part_b_set_node.dart';
 // dart format off
 T _$identity<T>(T value) => value;
 /// @nodoc
-mixin _$Day3PartBSetNode {
+mixin _$AOC2023D3P1SetNode {
 
  (IntPoint, IntPoint) get gearNumberLocations; (IntPoint, IntPoint) get gearNumberLocationsReveresed;
-/// Create a copy of Day3PartBSetNode
+/// Create a copy of AOC2023D3P1SetNode
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$Day3PartBSetNodeCopyWith<Day3PartBSetNode> get copyWith => _$Day3PartBSetNodeCopyWithImpl<Day3PartBSetNode>(this as Day3PartBSetNode, _$identity);
+$AOC2023D3P1SetNodeCopyWith<AOC2023D3P1SetNode> get copyWith => _$AOC2023D3P1SetNodeCopyWithImpl<AOC2023D3P1SetNode>(this as AOC2023D3P1SetNode, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Day3PartBSetNode&&(identical(other.gearNumberLocations, gearNumberLocations) || other.gearNumberLocations == gearNumberLocations)&&(identical(other.gearNumberLocationsReveresed, gearNumberLocationsReveresed) || other.gearNumberLocationsReveresed == gearNumberLocationsReveresed));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AOC2023D3P1SetNode&&(identical(other.gearNumberLocations, gearNumberLocations) || other.gearNumberLocations == gearNumberLocations)&&(identical(other.gearNumberLocationsReveresed, gearNumberLocationsReveresed) || other.gearNumberLocationsReveresed == gearNumberLocationsReveresed));
 }
 
 
@@ -34,15 +34,15 @@ int get hashCode => Object.hash(runtimeType,gearNumberLocations,gearNumberLocati
 
 @override
 String toString() {
-  return 'Day3PartBSetNode(gearNumberLocations: $gearNumberLocations, gearNumberLocationsReveresed: $gearNumberLocationsReveresed)';
+  return 'AOC2023D3P1SetNode(gearNumberLocations: $gearNumberLocations, gearNumberLocationsReveresed: $gearNumberLocationsReveresed)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $Day3PartBSetNodeCopyWith<$Res>  {
-  factory $Day3PartBSetNodeCopyWith(Day3PartBSetNode value, $Res Function(Day3PartBSetNode) _then) = _$Day3PartBSetNodeCopyWithImpl;
+abstract mixin class $AOC2023D3P1SetNodeCopyWith<$Res>  {
+  factory $AOC2023D3P1SetNodeCopyWith(AOC2023D3P1SetNode value, $Res Function(AOC2023D3P1SetNode) _then) = _$AOC2023D3P1SetNodeCopyWithImpl;
 @useResult
 $Res call({
  (IntPoint, IntPoint) gearNumberLocations, (IntPoint, IntPoint) gearNumberLocationsReveresed
@@ -53,14 +53,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$Day3PartBSetNodeCopyWithImpl<$Res>
-    implements $Day3PartBSetNodeCopyWith<$Res> {
-  _$Day3PartBSetNodeCopyWithImpl(this._self, this._then);
+class _$AOC2023D3P1SetNodeCopyWithImpl<$Res>
+    implements $AOC2023D3P1SetNodeCopyWith<$Res> {
+  _$AOC2023D3P1SetNodeCopyWithImpl(this._self, this._then);
 
-  final Day3PartBSetNode _self;
-  final $Res Function(Day3PartBSetNode) _then;
+  final AOC2023D3P1SetNode _self;
+  final $Res Function(AOC2023D3P1SetNode) _then;
 
-/// Create a copy of Day3PartBSetNode
+/// Create a copy of AOC2023D3P1SetNode
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? gearNumberLocations = null,Object? gearNumberLocationsReveresed = null,}) {
   return _then(_self.copyWith(
@@ -73,8 +73,8 @@ as (IntPoint, IntPoint),
 }
 
 
-/// Adds pattern-matching-related methods to [Day3PartBSetNode].
-extension Day3PartBSetNodePatterns on Day3PartBSetNode {
+/// Adds pattern-matching-related methods to [AOC2023D3P1SetNode].
+extension AOC2023D3P1SetNodePatterns on AOC2023D3P1SetNode {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -87,10 +87,10 @@ extension Day3PartBSetNodePatterns on Day3PartBSetNode {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Day3PartBSetNode value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AOC2023D3P1SetNode value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _Day3PartBSetNode() when $default != null:
+case _AOC2023D3P1SetNode() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -109,10 +109,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Day3PartBSetNode value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AOC2023D3P1SetNode value)  $default,){
 final _that = this;
 switch (_that) {
-case _Day3PartBSetNode():
+case _AOC2023D3P1SetNode():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -130,10 +130,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Day3PartBSetNode value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AOC2023D3P1SetNode value)?  $default,){
 final _that = this;
 switch (_that) {
-case _Day3PartBSetNode() when $default != null:
+case _AOC2023D3P1SetNode() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -153,7 +153,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( (IntPoint, IntPoint) gearNumberLocations,  (IntPoint, IntPoint) gearNumberLocationsReveresed)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _Day3PartBSetNode() when $default != null:
+case _AOC2023D3P1SetNode() when $default != null:
 return $default(_that.gearNumberLocations,_that.gearNumberLocationsReveresed);case _:
   return orElse();
 
@@ -174,7 +174,7 @@ return $default(_that.gearNumberLocations,_that.gearNumberLocationsReveresed);ca
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( (IntPoint, IntPoint) gearNumberLocations,  (IntPoint, IntPoint) gearNumberLocationsReveresed)  $default,) {final _that = this;
 switch (_that) {
-case _Day3PartBSetNode():
+case _AOC2023D3P1SetNode():
 return $default(_that.gearNumberLocations,_that.gearNumberLocationsReveresed);case _:
   throw StateError('Unexpected subclass');
 
@@ -194,7 +194,7 @@ return $default(_that.gearNumberLocations,_that.gearNumberLocationsReveresed);ca
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( (IntPoint, IntPoint) gearNumberLocations,  (IntPoint, IntPoint) gearNumberLocationsReveresed)?  $default,) {final _that = this;
 switch (_that) {
-case _Day3PartBSetNode() when $default != null:
+case _AOC2023D3P1SetNode() when $default != null:
 return $default(_that.gearNumberLocations,_that.gearNumberLocationsReveresed);case _:
   return null;
 
@@ -206,24 +206,24 @@ return $default(_that.gearNumberLocations,_that.gearNumberLocationsReveresed);ca
 /// @nodoc
 
 
-class _Day3PartBSetNode extends Day3PartBSetNode {
-  const _Day3PartBSetNode({required this.gearNumberLocations, required this.gearNumberLocationsReveresed}): super._();
+class _AOC2023D3P1SetNode extends AOC2023D3P1SetNode {
+   _AOC2023D3P1SetNode({required this.gearNumberLocations, required this.gearNumberLocationsReveresed}): super._();
   
 
 @override final  (IntPoint, IntPoint) gearNumberLocations;
 @override final  (IntPoint, IntPoint) gearNumberLocationsReveresed;
 
-/// Create a copy of Day3PartBSetNode
+/// Create a copy of AOC2023D3P1SetNode
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$Day3PartBSetNodeCopyWith<_Day3PartBSetNode> get copyWith => __$Day3PartBSetNodeCopyWithImpl<_Day3PartBSetNode>(this, _$identity);
+_$AOC2023D3P1SetNodeCopyWith<_AOC2023D3P1SetNode> get copyWith => __$AOC2023D3P1SetNodeCopyWithImpl<_AOC2023D3P1SetNode>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Day3PartBSetNode&&(identical(other.gearNumberLocations, gearNumberLocations) || other.gearNumberLocations == gearNumberLocations)&&(identical(other.gearNumberLocationsReveresed, gearNumberLocationsReveresed) || other.gearNumberLocationsReveresed == gearNumberLocationsReveresed));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AOC2023D3P1SetNode&&(identical(other.gearNumberLocations, gearNumberLocations) || other.gearNumberLocations == gearNumberLocations)&&(identical(other.gearNumberLocationsReveresed, gearNumberLocationsReveresed) || other.gearNumberLocationsReveresed == gearNumberLocationsReveresed));
 }
 
 
@@ -232,15 +232,15 @@ int get hashCode => Object.hash(runtimeType,gearNumberLocations,gearNumberLocati
 
 @override
 String toString() {
-  return 'Day3PartBSetNode(gearNumberLocations: $gearNumberLocations, gearNumberLocationsReveresed: $gearNumberLocationsReveresed)';
+  return 'AOC2023D3P1SetNode(gearNumberLocations: $gearNumberLocations, gearNumberLocationsReveresed: $gearNumberLocationsReveresed)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$Day3PartBSetNodeCopyWith<$Res> implements $Day3PartBSetNodeCopyWith<$Res> {
-  factory _$Day3PartBSetNodeCopyWith(_Day3PartBSetNode value, $Res Function(_Day3PartBSetNode) _then) = __$Day3PartBSetNodeCopyWithImpl;
+abstract mixin class _$AOC2023D3P1SetNodeCopyWith<$Res> implements $AOC2023D3P1SetNodeCopyWith<$Res> {
+  factory _$AOC2023D3P1SetNodeCopyWith(_AOC2023D3P1SetNode value, $Res Function(_AOC2023D3P1SetNode) _then) = __$AOC2023D3P1SetNodeCopyWithImpl;
 @override @useResult
 $Res call({
  (IntPoint, IntPoint) gearNumberLocations, (IntPoint, IntPoint) gearNumberLocationsReveresed
@@ -251,17 +251,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$Day3PartBSetNodeCopyWithImpl<$Res>
-    implements _$Day3PartBSetNodeCopyWith<$Res> {
-  __$Day3PartBSetNodeCopyWithImpl(this._self, this._then);
+class __$AOC2023D3P1SetNodeCopyWithImpl<$Res>
+    implements _$AOC2023D3P1SetNodeCopyWith<$Res> {
+  __$AOC2023D3P1SetNodeCopyWithImpl(this._self, this._then);
 
-  final _Day3PartBSetNode _self;
-  final $Res Function(_Day3PartBSetNode) _then;
+  final _AOC2023D3P1SetNode _self;
+  final $Res Function(_AOC2023D3P1SetNode) _then;
 
-/// Create a copy of Day3PartBSetNode
+/// Create a copy of AOC2023D3P1SetNode
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? gearNumberLocations = null,Object? gearNumberLocationsReveresed = null,}) {
-  return _then(_Day3PartBSetNode(
+  return _then(_AOC2023D3P1SetNode(
 gearNumberLocations: null == gearNumberLocations ? _self.gearNumberLocations : gearNumberLocations // ignore: cast_nullable_to_non_nullable
 as (IntPoint, IntPoint),gearNumberLocationsReveresed: null == gearNumberLocationsReveresed ? _self.gearNumberLocationsReveresed : gearNumberLocationsReveresed // ignore: cast_nullable_to_non_nullable
 as (IntPoint, IntPoint),

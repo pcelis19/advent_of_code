@@ -1,11 +1,15 @@
+import 'dart:math';
+
 import 'package:advent_of_code/advent_of_code.dart';
 
-class AOC2023D3P2Problem extends AdventOfCodeProblem {
+class AOC2023D3P2Problem extends AdventOfCodeProblem<AOC2023D3P1InputModel> {
+  AOC2023D3P2Problem({required super.getInputFcn});
+
   @override
   Future<String> solution() async {
-    final model = await day3repo.getPartB();
+    final model = await getInput();
     var sum = 0;
-    final usedPairs = <Day3PartBSetNode>{};
+    final usedPairs = <AOC2023D3P1SetNode>{};
     print(model.rows);
     final rows = model.rows;
     for (int y = 0; y < rows.length; y++) {
@@ -24,14 +28,14 @@ class AOC2023D3P2Problem extends AdventOfCodeProblem {
     for (final pair in usedPairs) {
       final val1 = model.getNodeOrThrow(pair.getFirstVal());
       final val2 = model.getNodeOrThrow(pair.getSecondVal());
-      sum += val1.absoluteValue * val2.absoluteValue;
+      sum += val1.intValue * val2.intValue;
     }
 
     return sum.toString();
   }
 
-  Day3PartBSetNode? _getSetNode({
-    required Day3PartAInputModel model,
+  AOC2023D3P1SetNode? _getSetNode({
+    required AOC2023D3P1InputModel model,
     required int curYLoc,
     required int curXLoc,
   }) {
@@ -118,12 +122,12 @@ class AOC2023D3P2Problem extends AdventOfCodeProblem {
     return null;
   }
 
-  Day3PartBSetNode? buildDay3PartBSetNode({
+  AOC2023D3P1SetNode? buildDay3PartBSetNode({
     required IntPoint? node1Loc,
     required IntPoint? node2Loc,
   }) {
     if (node1Loc != null && node2Loc != null) {
-      return Day3PartBSetNode.fromNodeLocations(
+      return AOC2023D3P1SetNode.fromNodeLocations(
         node1Loc: node1Loc,
         node2Loc: node2Loc,
       );
@@ -132,7 +136,7 @@ class AOC2023D3P2Problem extends AdventOfCodeProblem {
   }
 
   (IntPoint?, IntPoint?) _doesLineHaveSymbolInRange({
-    required Day3PartAInputModel model,
+    required AOC2023D3P1InputModel model,
     required int yLoc,
     required int xStart,
     required int xFinish,

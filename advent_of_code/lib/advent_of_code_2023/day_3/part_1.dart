@@ -1,11 +1,12 @@
 import 'package:advent_of_code/advent_of_code.dart';
 
-class AOC2023D3P1Problem extends AdventOfCodeProblem {
+class AOC2023D3P1Problem
+    extends AdventOfCodeProblem<List<AOC2023D3P1InputRow>> {
   AOC2023D3P1Problem({required super.getInputFcn});
 
   @override
   Future<String> solution() async {
-    final lines = await day3repo.getPartA();
+    final lines = await getInput();
     var sum = 0;
     for (int y = 0; y < lines.length; y++) {
       final line = lines[y];
@@ -17,7 +18,7 @@ class AOC2023D3P1Problem extends AdventOfCodeProblem {
           currentNumberNode: entry.value,
         );
         if (shouldAdd) {
-          sum += entry.value.absoluteValue;
+          sum += entry.value.intValue;
         }
       }
     }
@@ -25,10 +26,10 @@ class AOC2023D3P1Problem extends AdventOfCodeProblem {
   }
 
   bool _shouldAdd({
-    required List<Day3PartAInputRow> lines,
+    required List<AOC2023D3P1InputRow> lines,
     required int yLoc,
     required int xLoc,
-    required Day3PartAInputNodeNumber currentNumberNode,
+    required AOC2023D3P1InputNodeNumber currentNumberNode,
   }) {
     final willCheckTop = yLoc > 0;
     final willCheckBottom = yLoc < lines.length - 1;
@@ -77,7 +78,7 @@ class AOC2023D3P1Problem extends AdventOfCodeProblem {
   }
 
   bool _doesLineHaveSymbolInRange(
-    Day3PartAInputRow row, {
+    AOC2023D3P1InputRow row, {
     required int xStart,
     required int xFinish,
   }) {
